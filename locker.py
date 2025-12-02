@@ -6,7 +6,8 @@ try:
     with open('test.txt', 'r') as f, open('log.txt', 'w') as f2:
         lines = f.readlines()
         for line in lines:
-            temp = 0;
+            prev = count
+            temp = 0
             parts = re.findall(r'[A-Za-z]+|\d+', line)
             character = parts[0]
             number = int(parts[1])
@@ -16,6 +17,8 @@ try:
                 count += number
             while count < 0:
                 count += 100
+                if prev == 0:
+                    continue
                 temp += 1
             while count >= 100:
                 count -= 100
