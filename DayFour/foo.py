@@ -1,20 +1,20 @@
 import re
 
+total = 0;
+
 try:
-    with open('test.txt', 'r') as f:
-        s = f.read()
-        flag = 0
-        result = [list(map(int, part.split("-"))) for part in s.split(",")]
-        total = 0;
-        for i in result:
-            for j in range (i[0], i[1] + 1):
-                num = str(j)
-                way = len(num)//2
-                first_half = num[:way]
-                second_half = num[way:]
-                if first_half == second_half:
-                    total += j
-        print(total)
+    with open('sample.txt', 'r') as f:
+        lines = f.readlines()
+        for main,line in enumerate(lines):
+            val = 0
+            for index,p in enumerate(line):
+                if p == '@':
+                    try:
+                        for n in range()
+                    except ValueError:
+                        continue
+            total+=val
+    print(total)
 except FileNotFoundError:
     print("Error: The file 'your_file.txt' was not found.")
 except Exception as e:
